@@ -1,0 +1,37 @@
+﻿@model MirayBayramETicaret.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Müşteri Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.Cariid)
+        @Html.Label("Müşteri Adı")
+        @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariAd, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Müşteri Soyadı")
+        @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariSoyad, "", new { @style = "color:orange" })
+
+        <br />
+        @Html.Label("Müşteri Şehir")
+        @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Müşteri Mail")
+        @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Müşteri Adres")
+        @Html.TextAreaFor(x => x.CariAdres, new { @class = "form-control" })
+
+        <br />
+        <button class="btn btn-default" style="background-color:yellowgreen; color:white">Güncelle</button>
+    </div>
+}

@@ -1,0 +1,27 @@
+﻿@model MirayBayramETicaret.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Müşteri Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Müşteri Adı")
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri Soyadı")
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri Şehir")
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri Mail")
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri Adres")
+    @Html.TextAreaFor(x => x.CariAdres, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
